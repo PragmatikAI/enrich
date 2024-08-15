@@ -3,6 +3,9 @@
 [![Coverage Status][coveralls-image]][coveralls]
 [![CI][ci-image]][ci]
 
+# Fork
+A fork of Snowplow's Enrich Code; master reset to when the code base was last licensed under the **[Apache License, Version 2.0][license]**. 
+
 # Snowplow Enrich
 
 Snowplow Enrich is a set of applications and libraries for processing raw Snowplow events into validated and enriched Snowplow events.
