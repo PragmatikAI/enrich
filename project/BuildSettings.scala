@@ -208,8 +208,8 @@ object BuildSettings {
     dockerEntrypoint := {
       val orig = dockerEntrypoint.value
       orig.head +: "-Dnashorn.args=--language=es6" +: orig.tail
-      dockerRepository := Some("pragmatikai")
-    }
+    },
+    dockerRepository := Some("pragmatikai")
   )
 
   // TESTS
