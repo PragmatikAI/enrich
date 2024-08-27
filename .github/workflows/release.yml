@@ -54,11 +54,13 @@ jobs:
       run: |
         export PACKAGE_NAME=$(sbt "project ${{ matrix.app }}" dockerAlias -Dsbt.log.noformat=true | sed -n '/\[info\]/ s/\[info\] //p' | tail -1 | tr -d '\n' | cut -d":" -f1)
         echo "::set-output name=package_name::$PACKAGE_NAME"
+        echo $PACKAGE_NAME
     - name: Get app base directory
       id: baseDirectory
       run: |
         export BASE_DIRECTORY=$(sbt "project ${{ matrix.app }}" baseDirectory -Dsbt.log.noformat=true | sed -n '/\[info\]/ s/\[info\] //p' | tail -1 | tr -d '\n')
         echo "::set-output name=directory::$BASE_DIRECTORY"
+        echo $BASE_DIRECTORY
     - name: Get app base directory (distroless)
       id: baseDirectoryDistroless
       run: |
