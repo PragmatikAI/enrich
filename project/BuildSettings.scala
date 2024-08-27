@@ -209,7 +209,6 @@ object BuildSettings {
       val orig = dockerEntrypoint.value
       orig.head +: "-Dnashorn.args=--language=es6" +: orig.tail
     },
-    dockerRepository := Some("pragmatikai")
   )
 
   // TESTS
@@ -314,7 +313,8 @@ object BuildSettings {
     kinesisProjectSettings ++ buildSettings ++
     // Build and publish
     assemblySettings ++ dockerSettingsFocal ++
-      Seq(Docker / packageName := "pragmatikai-enrich-kinesis") ++
+      Seq(Docker / dockerRepository := "pragmatik-enrich-kinesis") ++
+      Seq(Docker / packageName := "pragmatikai") ++
     // Tests
     scoverageSettings ++ noParallelTestExecution ++ Seq(Test / fork := true)
   }
@@ -337,6 +337,7 @@ object BuildSettings {
     // Build and publish
     assemblySettings ++ dockerSettingsFocal ++
       Seq(Docker / packageName := "pragmatik-enrich-kafka") ++
+      Seq(Docker / dockerRepository := "pragmatikai") ++
     // Tests
     scoverageSettings ++ noParallelTestExecution
   }
