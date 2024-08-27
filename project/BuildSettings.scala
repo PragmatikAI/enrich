@@ -107,8 +107,8 @@ object BuildSettings {
   )
 
   lazy val kafkaProjectSettings = projectSettings ++ Seq(
-    name := "snowplow-enrich-kafka",
-    moduleName := "snowplow-enrich-kafka",
+    name := "pragmatik-enrich-kafka",
+    moduleName := "pragmatik-enrich-kafka",
     description := "High-performance streaming enrich app working with Kafka, built on top of functional streams",
     buildInfoKeys := Seq[BuildInfoKey](organization, name, version, description),
     buildInfoPackage := "com.snowplowanalytics.snowplow.enrich.kafka.generated"
@@ -335,7 +335,7 @@ object BuildSettings {
     kafkaProjectSettings ++ buildSettings ++
     // Build and publish
     assemblySettings ++ dockerSettingsFocal ++
-      Seq(Docker / packageName := "snowplow-enrich-kafka") ++
+      Seq(Docker / packageName := "pragmatik-enrich-kafka") ++
     // Tests
     scoverageSettings ++ noParallelTestExecution
   }
