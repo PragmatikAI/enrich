@@ -91,8 +91,8 @@ object BuildSettings {
   )
 
   lazy val kinesisProjectSettings = projectSettings ++ Seq(
-    name := "snowplow-enrich-kinesis",
-    moduleName := "snowplow-enrich-kinesis",
+    name := "pragmatik-enrich-kinesis",
+    moduleName := "pragmatik-enrich-kinesis",
     description := "High-performance streaming enrich app working with Kinesis, built on top of functional streams",
     buildInfoKeys := Seq[BuildInfoKey](organization, name, version, description),
     buildInfoPackage := "com.snowplowanalytics.snowplow.enrich.kinesis.generated"
@@ -313,7 +313,7 @@ object BuildSettings {
     kinesisProjectSettings ++ buildSettings ++
     // Build and publish
     assemblySettings ++ dockerSettingsFocal ++
-      Seq(Docker / packageName := "snowplow-enrich-kinesis") ++
+      Seq(Docker / packageName := "pragmatik-enrich-kinesis") ++
     // Tests
     scoverageSettings ++ noParallelTestExecution ++ Seq(Test / fork := true)
   }
