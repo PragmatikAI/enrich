@@ -337,7 +337,6 @@ object BuildSettings {
     // Build and publish
     assemblySettings ++ dockerSettingsFocal ++
       Seq(Docker / packageName := "pragmatik-enrich-kafka") ++
-      Seq(Docker / dockerRepository := "pragmatikai") ++
     // Tests
     scoverageSettings ++ noParallelTestExecution
   }
