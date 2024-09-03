@@ -91,8 +91,8 @@ object BuildSettings {
   )
 
   lazy val kinesisProjectSettings = projectSettings ++ Seq(
-    name := "pragmatikai-enrich-kinesis",
-    moduleName := "pragmatikai-enrich-kinesis",
+    name := "snowplow-enrich-kinesis",
+    moduleName := "snowplow-enrich-kinesis",
     description := "High-performance streaming enrich app working with Kinesis, built on top of functional streams",
     buildInfoKeys := Seq[BuildInfoKey](organization, name, version, description),
     buildInfoPackage := "com.snowplowanalytics.snowplow.enrich.kinesis.generated"
@@ -208,7 +208,7 @@ object BuildSettings {
     dockerEntrypoint := {
       val orig = dockerEntrypoint.value
       orig.head +: "-Dnashorn.args=--language=es6" +: orig.tail
-    },
+    }
   )
 
   // TESTS
@@ -313,8 +313,7 @@ object BuildSettings {
     kinesisProjectSettings ++ buildSettings ++
     // Build and publish
     assemblySettings ++ dockerSettingsFocal ++
-      Seq(Docker / dockerRepository := "pragmatik-enrich-kinesis") ++
-      Seq(Docker / packageName := "pragmatikai") ++
+      Seq(Docker / packageName := "snowplow-enrich-kinesis") ++
     // Tests
     scoverageSettings ++ noParallelTestExecution ++ Seq(Test / fork := true)
   }
