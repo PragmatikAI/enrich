@@ -107,7 +107,7 @@ object BuildSettings {
   )
 
   lazy val kafkaProjectSettings = projectSettings ++ Seq(
-    name := "pragmatik-enrich-kafka",
+    name := "snowplow-enrich-kafka",
     moduleName := "pragmatik-enrich-kafka",
     description := "High-performance streaming enrich app working with Kafka, built on top of functional streams",
     buildInfoKeys := Seq[BuildInfoKey](organization, name, version, description),
