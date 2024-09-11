@@ -91,7 +91,7 @@ object BuildSettings {
   )
 
   lazy val kinesisProjectSettings = projectSettings ++ Seq(
-    name := "pragmatik-enrich-kinesis",
+    name := "snowplow-enrich-kinesis",
     moduleName := "pragmatik-enrich-kinesis",
     description := "High-performance streaming enrich app working with Kinesis, built on top of functional streams",
     buildInfoKeys := Seq[BuildInfoKey](organization, name, version, description),
