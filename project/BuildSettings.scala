@@ -91,7 +91,7 @@ object BuildSettings {
   )
 
   lazy val kinesisProjectSettings = projectSettings ++ Seq(
-    name := "snowplow-enrich-kinesis",
+    name := "pragmatik-enrich-kinesis",
     moduleName := "pragmatik-enrich-kinesis",
     description := "High-performance streaming enrich app working with Kinesis, built on top of functional streams",
     buildInfoKeys := Seq[BuildInfoKey](organization, name, version, description),
@@ -107,7 +107,7 @@ object BuildSettings {
   )
 
   lazy val kafkaProjectSettings = projectSettings ++ Seq(
-    name := "snowplow-enrich-kafka",
+    name := "pragmatik-enrich-kafka",
     moduleName := "pragmatik-enrich-kafka",
     description := "High-performance streaming enrich app working with Kafka, built on top of functional streams",
     buildInfoKeys := Seq[BuildInfoKey](organization, name, version, description),
